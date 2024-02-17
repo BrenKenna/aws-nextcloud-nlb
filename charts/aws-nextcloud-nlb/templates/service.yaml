@@ -15,7 +15,7 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.anlbScheme }}
     service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: {{ .Values.service.annotations.anlb_nlb_target_type }}
     service.beta.kubernetes.io/aws-load-balancer-ip-address-type: {{ .Values.service.annotations.anlbAddressType }}
-    service.beta.kubernetes.io/aws-load-balancer-subnets: {{ [.Values.service.annotations.anlbSubnetA, .Values.service.annotations.anlbSubnetB] }}
+    service.beta.kubernetes.io/aws-load-balancer-subnets: {{ printf "%s,%s" .Values.service.annotations.anlbSubnetA .Values.service.annotations.anlbSubnetB }}
 spec:
   type: {{ .Values.service.type }}
   {{- if (eq .Values.service.type "LoadBalancer") }}
