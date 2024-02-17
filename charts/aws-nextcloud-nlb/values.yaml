@@ -387,13 +387,13 @@ service:
   loadBalancerIP: ""
   nodePort: nil
   annotations: 
-    anlb-name: "nextcloud-nlb"
-    anlb-type: "nlb-ip"
-    anlb-scheme: "internal"
-    anlb-internal: "true"
-    anlb-nlb-target-type: "ip"
-    anlb-ip-address-type: "ipv4"
-    anlb-subnets: "xxx,yyy"
+    anlbName: "nextcloud-nlb"
+    anlbType: "nlb-ip"
+    anlbScheme: "internal"
+    anlbInternal: "true"
+    anlb_nlb_target_type: "ip"
+    anlbAddressType: "ipv4"
+    anlbSubnets: "xxx,yyy"
     
 
 ## Enable persistence using Persistent Volume Claims
