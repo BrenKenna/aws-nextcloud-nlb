@@ -10,13 +10,13 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/component: app
   annotations: 
-    "service.beta.kubernetes.io/aws-load-balancer-name": {{ .Values.service.annotations.anlb-name }}
-    "service.beta.kubernetes.io/aws-load-balancer-type": {{ .Values.service.annotations.anlb-type }}
-    "service.beta.kubernetes.io/aws-load-balancer-scheme": {{ .Values.service.annotations.anlb-scheme }}
-    "service.beta.kubernetes.io/aws-load-balancer-internal": {{ .Values.service.annotations.anlb-internal }}
-    "service.beta.kubernetes.io/aws-load-balancer-nlb-target-type": {{ .Values.service.annotations.anlb-nlb-target-type }}
-    "service.beta.kubernetes.io/aws-load-balancer-ip-address-type": {{ .Values.service.annotations.anlb-address-type }}
-    "service.beta.kubernetes.io/aws-load-balancer-subnets": {{ .Values.service.annotations.anlb-subnets }}
+    service.beta.kubernetes.io/aws-load-balancer-name: {{ .Values.service.annotations.anlb-name }}
+    service.beta.kubernetes.io/aws-load-balancer-type: {{ .Values.service.annotations.anlb-type }}
+    service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.anlb-scheme }}
+    service.beta.kubernetes.io/aws-load-balancer-internal: {{ .Values.service.annotations.anlb-internal }}
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: {{ .Values.service.annotations.anlb-nlb-target-type }}
+    service.beta.kubernetes.io/aws-load-balancer-ip-address-type: {{ .Values.service.annotations.anlb-address-type }}
+    service.beta.kubernetes.io/aws-load-balancer-subnets: {{ .Values.service.annotations.anlb-subnets }}
 spec:
   type: {{ .Values.service.type }}
   {{- if (eq .Values.service.type "LoadBalancer") }}
