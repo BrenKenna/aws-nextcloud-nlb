@@ -392,7 +392,8 @@ service:
     anlbScheme: internal
     anlb_nlb_target_type: ip
     anlbAddressType: ipv4
-    anlbSubnets: "xxx,yyy"
+    anlbSubnetA: xxx
+    anlbSubnetB: yyy
     
 
 ## Enable persistence using Persistent Volume Claims
