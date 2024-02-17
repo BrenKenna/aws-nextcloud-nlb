@@ -218,4 +218,35 @@ entries:
     urls:
     - https://github.com/BrenKenna/aws-nextcloud-nlb/releases/download/aws-nlb-nextcloud-4.6.1/aws-nlb-nextcloud-4.6.1.tgz
     version: 4.6.1
-generated: "2024-02-17T18:50:06.723620166Z"
+  - apiVersion: v2
+    appVersion: 28.0.2
+    created: "2024-02-17T19:01:34.262958038Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 12.12.*
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 12.2.*
+    - condition: redis.enabled
+      name: redis
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 17.13.*
+    description: Fork from nextcloud community for aws-eks nlb controller
+    digest: 8225a22ac166d0fbec9519e3e8c06195fc57d8ec5542bad15570221310e03f27
+    keywords:
+    - nextcloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: brendan.kenna.bk@gmail.com
+      name: BrenKenna
+    name: aws-nlb-nextcloud
+    urls:
+    - https://github.com/BrenKenna/aws-nextcloud-nlb/releases/download/aws-nlb-nextcloud-4.6.0/aws-nlb-nextcloud-4.6.0.tgz
+    version: 4.6.0
+generated: "2024-02-17T19:01:34.262974118Z"
