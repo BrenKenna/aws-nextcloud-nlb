@@ -1,0 +1,45 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "nextcloud.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "nextcloud.name" . }}
+    helm.sh/chart: {{ include "nextcloud.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/component: app
+annotations: 
+    service.beta.kubernetes.io/aws-load-balancer-name: {{ .Values.service.annotations.anlb-name }}
+    service.beta.kubernetes.io/aws-load-balancer-type: {{ .Values.service.annotations.anlb-type }}
+    service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.anlb-scheme }}
+    service.beta.kubernetes.io/aws-load-balancer-internal: {{ .Values.service.annotations.anlb-internal }}
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: {{ .Values.service.annotations.anlb-nlb-target-type }}
+    service.beta.kubernetes.io/aws-load-balancer-ip-address-type: {{ .Values.service.annotations.anlb-address-type }}
+    service.beta.kubernetes.io/aws-load-balancer-subnets: {{ .Values.service.annotations.anlb-subnets }}
+spec:
+  type: {{ .Values.service.type }}
+  {{- if (eq .Values.service.type "LoadBalancer") }}
+  {{- with .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ . }}
+  {{- end }}
+  {{- end }}
+  {{- with .Values.service.ipFamilies }}
+  ipFamilies: 
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  {{- with .Values.service.ipFamilyPolicy }}
+  ipFamilyPolicy: {{ . }}
+  {{- end }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.nextcloud.containerPort }}
+      protocol: TCP
+      name: http
+      {{- if (eq .Values.service.type "NodePort") }}
+      nodePort: {{ .Values.service.nodePort | default "" }}
+      {{- end }}
+  selector:
+    app.kubernetes.io/name: {{ include "nextcloud.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: app
