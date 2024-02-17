@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
     app.kubernetes.io/component: app
   annotations: 
-    service.beta.kubernetes.io/aws-load-balancer-name: {{ .Values.service.annotations.anlb-name }}
+    - service.beta.kubernetes.io/aws-load-balancer-name: {{ .Values.service.annotations.anlb-name }}
     service.beta.kubernetes.io/aws-load-balancer-type: {{ .Values.service.annotations.anlb-type }}
     service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.anlb-scheme }}
     service.beta.kubernetes.io/aws-load-balancer-internal: {{ .Values.service.annotations.anlb-internal }}
