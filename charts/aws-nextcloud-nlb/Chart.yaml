@@ -1,6 +1,6 @@
 apiVersion: v2
 name: aws-nlb-nextcloud
-version: 4.6.0
+version: 4.6.1
 appVersion: 28.0.2
 description: Fork from nextcloud community for aws-eks nlb controller
 keywords:
