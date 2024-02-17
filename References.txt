@@ -1,0 +1,5 @@
+1). Original Repo: https://github.com/nextcloud/helm
+
+2). AWS EKS Load Balancer Controller: https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.2/guide/service/nlb/
+
+3). Repo Setup Here: https://medium.com/@dunefro/show-helm-charts-on-artifacthub-via-hosting-on-github-pages-102ee1f98d35
