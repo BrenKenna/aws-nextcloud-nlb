@@ -13,7 +13,6 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-name: {{ .Values.service.annotations.anlbName }}
     service.beta.kubernetes.io/aws-load-balancer-type: {{ .Values.service.annotations.anlbType }}
     service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.anlbScheme }}
-    service.beta.kubernetes.io/aws-load-balancer-internal: {{ .Values.service.annotations.anlbInternal }}
     service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: {{ .Values.service.annotations.anlb_nlb_target_type }}
     service.beta.kubernetes.io/aws-load-balancer-ip-address-type: {{ .Values.service.annotations.anlbAddressType }}
     service.beta.kubernetes.io/aws-load-balancer-subnets: {{ .Values.service.annotations.anlbSubnets }}
